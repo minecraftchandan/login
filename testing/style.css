@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('matte.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	color: #fff;
+	position: relative;
+}
+
+.floating-image {
+	position: absolute;
+	bottom: -6px;
+	right: -50px;
+	width: 1200px;
+	opacity: 0.9;
+	animation: float 4s ease-in-out infinite, shine 2s infinite;
+	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+	pointer-events: none;
+	z-index: 1;
+}
+
+
+/* Floating animation */
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+
+
+.container {
+	background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+	backdrop-filter: blur(8px);
+	border-radius: 15px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	box-shadow:
+		0 0 12px rgba(255, 255, 255, 0.2),
+		0 0 25px rgba(255, 255, 255, 0.1),
+		inset 0 0 15px rgba(255, 255, 255, 0.1);
+	width: 400px;
+	max-width: 100%;
+	padding: 40px 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.form-container {
+	position: relative;
+	width: 100%;
+	min-height: 400px;
+}
+
+.form-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.form-box.active {
+	opacity: 1;
+	visibility: visible;
+	z-index: 2;
+}
+
+form {
+	background: transparent;
+	backdrop-filter: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px 20px;
+	border-radius: 10px;
+}
+
+h1 {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+a {
+	color: #ccc;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+	transition: color 0.3s;
+}
+
+a:hover {
+	color: #ffffff;
+	text-shadow: 0 0 5px #fff;
+}
+
+input {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	border-radius: 20px;
+	color: #fff;
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+	transition: background-color 0.3s ease;
+}
+
+input::placeholder {
+	color: #ccc;
+}
+
+input:focus {
+	background-color: rgba(255, 255, 255, 0.2);
+	outline: none;
+	box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+button {
+	border-radius: 30px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.05);
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 30px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow:
+		0 0 10px rgba(255, 255, 255, 0.2),
+		0 0 5px rgba(255, 255, 255, 0.2) inset;
+	backdrop-filter: blur(3px);
+	margin-top: 10px;
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.toggle-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+}
