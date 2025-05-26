@@ -1,167 +1,193 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-	background-image: url('matte.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: 0;
-	overflow: hidden;
-	color: #fff;
-	position: relative;
+  background-image: url("Red_Sun_Rising__A_Mystical_Mountain_Escape.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  backdrop-filter: blur(3px);
+
 }
-
-.floating-image {
-	position: absolute;
-	bottom: -6px;
-	right: -50px;
-	width: 1200px;
-	opacity: 0.9;
-	animation: float 4s ease-in-out infinite, shine 2s infinite;
-	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-	pointer-events: none;
-	z-index: 1;
-}
-
-
-/* Floating animation */
-@keyframes float {
-	0%, 100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-10px);
-	}
-}
-
 
 
 .container {
-	background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-	backdrop-filter: blur(8px);
-	border-radius: 15px;
-	border: 2px solid rgba(255, 255, 255, 0.4);
-	box-shadow:
-		0 0 12px rgba(255, 255, 255, 0.2),
-		0 0 25px rgba(255, 255, 255, 0.1),
-		inset 0 0 15px rgba(255, 255, 255, 0.1);
-	width: 400px;
-	max-width: 100%;
-	padding: 40px 20px;
-	position: relative;
-	z-index: 1;
-}
-
-.form-container {
-	position: relative;
-	width: 100%;
-	min-height: 400px;
-}
-
-.form-box {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.form-box.active {
-	opacity: 1;
-	visibility: visible;
-	z-index: 2;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
 }
 
 form {
-	background: transparent;
-	backdrop-filter: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 30px 20px;
-	border-radius: 10px;
-}
-
-h1 {
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-
-a {
-	color: #ccc;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-	transition: color 0.3s;
-}
-
-a:hover {
-	color: #ffffff;
-	text-shadow: 0 0 5px #fff;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
 }
 
 input {
-	background-color: rgba(255, 255, 255, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
-	border-radius: 20px;
-	color: #fff;
-	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
-	transition: background-color 0.3s ease;
-}
-
-input::placeholder {
-	color: #ccc;
-}
-
-input:focus {
-	background-color: rgba(255, 255, 255, 0.2);
-	outline: none;
-	box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
 }
 
 button {
-	border-radius: 30px;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	background-color: rgba(255, 255, 255, 0.05);
-	color: #ffffff;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 30px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	box-shadow:
-		0 0 10px rgba(255, 255, 255, 0.2),
-		0 0 5px rgba(255, 255, 255, 0.2) inset;
-	backdrop-filter: blur(3px);
-	margin-top: 10px;
+  background-color: #a8312d;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-button:hover {
-	background-color: rgba(255, 255, 255, 0.15);
-	box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+  cursor: pointer;
 }
 
-.toggle-buttons {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-	margin-top: 20px;
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
 }
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+
+  background: none;
+
+  /* Two GIFs as background images */
+  background-image: url('https://i.pinimg.com/originals/76/e9/41/76e94131e9d4cc2df20cd194719fe3c4.gif'), url('https://giffiles.alphacoders.com/359/35983.gif');
+
+  /* Position left GIF on left center, right GIF on right center */
+  background-position: left center, right center;
+
+  background-repeat: no-repeat, no-repeat;
+
+  /* Each covers 50% width and 100% height without stretching */
+  background-size: 50% 100%, 50% 100%;
+}
+
+
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+
+
