@@ -1,16 +1,31 @@
-const signInForm = document.querySelector('.sign-in-container');
-const signUpForm = document.querySelector('.sign-up-container');
-const linkToSignUp = document.getElementById('linkToSignUp');
-const linkToSignIn = document.getElementById('linkToSignIn');
+const container = document.getElementById("container");
+    const goRegister = document.getElementById("goRegister");
+    const goLogin = document.getElementById("goLogin");
 
-linkToSignUp.addEventListener('click', (e) => {
-	e.preventDefault();
-	signInForm.classList.remove('active');
-	signUpForm.classList.add('active');
-});
+    const signInForm = document.getElementById("signInForm");
+    const signUpForm = document.getElementById("signUpForm");
+    const placeholder = document.getElementById("formPlaceholder");
 
-linkToSignIn.addEventListener('click', (e) => {
-	e.preventDefault();
-	signUpForm.classList.remove('active');
-	signInForm.classList.add('active');
-});
+    goRegister.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (window.innerWidth <= 760) {
+        signInForm.classList.remove("active");
+        signUpForm.classList.add("active");
+        placeholder.classList.add("active");
+      } else {
+        container.classList.add("active");
+        placeholder.classList.remove("active");
+      }
+    });
+
+    goLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (window.innerWidth <= 760) {
+        signUpForm.classList.remove("active");
+        signInForm.classList.add("active");
+        placeholder.classList.add("active");
+      } else {
+        container.classList.remove("active");
+        placeholder.classList.remove("active");
+      }
+    })
