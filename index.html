@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sign In / Sign Up</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Link-text style */
+    .link-button {
+      color: #0066cc;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover .link-button {
+      color: #004999;
+    }
+  </style>
 </head>
 <body>
+  <div class="container" id="container">
 
-	<!-- Optional Floating Image Below -->
-	<img src="rins.png" alt="Floating" class="floating-image">
+    <!-- Sign Up Form -->
+    <div class="form-container sign-up" id="signUpForm">
+      <form>
+        <h1>Create Account</h1>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
+        <a href="#" id="goLogin">
+          Already have an account? <span class="link-button">Sign in</span>
+        </a>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
 
-	<!-- Glassy Container -->
-	<div class="container">
-		<div class="form-container">
-			<!-- Sign In Form -->
-			<div class="form-box sign-in-container active">
-				<form>
-					<h1>Sign In</h1>
-					<input type="text" placeholder="Username" />
-					<input type="password" placeholder="Password" />
-					<a href="#">Forgot your password?</a>
-					<button type="button">Sign In</button>
-					<p class="switch-text">
-						Don't have an account? <a href="#" id="linkToSignUp">Sign Up</a>
-					</p>
-				</form>
-			</div>
+    <!-- Sign In Form -->
+    <div class="form-container sign-in active" id="signInForm">
+      <form>
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <a href="#" id="goRegister">
+          Don't have an account? <span class="link-button">Sign up</span>
+        </a>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
 
-			<!-- Sign Up Form -->
-			<div class="form-box sign-up-container">
-				<form>
-					<h1>Create Account</h1>
-					<input type="text" placeholder="Username" />
-					<input type="password" placeholder="Password" />
-					<input type="password" placeholder="Confirm Password" />
-					<button type="button">Sign Up</button>
-					<p class="switch-text">
-						Already have an account? <a href="#" id="linkToSignIn">Sign In</a>
-					</p>
-				</form>
-			</div>
-		</div>
-	</div>
-<script src="index.js"></script>
+    <!-- Placeholder for mobile -->
+    <div class="form-placeholder" id="formPlaceholder"></div>
+
+    <!-- Optional Toggle Panels (Desktop) -->
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left"></div>
+        <div class="toggle-panel toggle-right"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script to handle form switching -->
+  <script src="index.js"></script>
 </body>
 </html>
+
